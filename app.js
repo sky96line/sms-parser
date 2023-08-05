@@ -10,6 +10,7 @@ const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
 app.post("/sms", (req, res) => {
+  console.log(req.body.sms);
   var t = getTransactionInfo.getTransactionInfo(req.body.sms)
   console.log(t);
   try  {
