@@ -7,7 +7,7 @@ app.use(express.json())
 const port = process.env.PORT || 3001;
 
 app.get("/", (req, res) => res.type('html').send(html));
-app.get("/sms", (req, res) => {
+app.post("/sms", (req, res) => {
   var t = getTransactionInfo.getTransactionInfo(req.body.sms)
   res.send(t)
 });
