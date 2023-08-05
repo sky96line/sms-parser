@@ -2,7 +2,9 @@ const getTransactionInfo = require('transaction-sms-parser');
 const express = require("express");
 let app = express();
 
-app.use(express.json())
+app.use(express.urlencoded());
+
+app.use(express.json());
 
 const port = process.env.PORT || 3001;
 
